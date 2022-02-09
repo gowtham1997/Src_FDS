@@ -9,7 +9,7 @@ class SlurmMonitor(AbstractMonitor):
 
     def _get_current_job_list(self):
         if self.status_list is None:
-            self.status_list = [self.status_cmd, "-u", self.username, "-j", jobids]
+            self.status_list = [self.status_cmd, "-u", self.username, "-j", self.jobids]
         proc = subprocess.Popen(self.status_list, stdout=subprocess.PIPE)
         out = proc.stdout.read().decode("utf-8")
         out_list = out.split("\n")
