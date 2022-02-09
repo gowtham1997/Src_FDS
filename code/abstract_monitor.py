@@ -17,7 +17,7 @@ class AbstractMonitor(abc.ABC):
                 self.jobnames.append("no_name")
             else:
                 self.jobnames.append(jobnames)
-        self.jobids.append(jobids)
+        self.jobids.append(jobid)
 
     def add_jobs(self, jobids: list, jobnames=[]):
         if len(jobnames) != len(jobids):
